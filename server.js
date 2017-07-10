@@ -4,12 +4,13 @@ const express = require('express');
 const path = require('path');
 const child_proc = require('child_process');
 // Constants
-const PORT = 8080;
+const PORT = 5000;
 const HOST = '0.0.0.0';
 
 // App
 const app = express();
-app.use('/', express.static(__dirname)); //  "public" off of current is root
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(__dirname)); 
 app.use('/india', express.static(path.join(__dirname, 'india')));
 app.use('/momsanddads', express.static(path.join(__dirname, 'momsanddads')));
 app.use('/creative', express.static(path.join(__dirname, 'creative')));

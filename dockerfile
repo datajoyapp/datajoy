@@ -11,5 +11,5 @@ RUN npm install
 # Bundle app source
 COPY . /var/www/datajoy
 
-EXPOSE 8080
+EXPOSE 5000
 CMD [ "npm", "start" ]
