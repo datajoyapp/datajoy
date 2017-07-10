@@ -1,0 +1,13 @@
+{
+  "name": "Datajoy",
+  "version": "0.0.1",
+  "description": "Datajoy on Docker",
+  "author": "Datajoy <datajoyapp@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
