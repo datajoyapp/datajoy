@@ -19,12 +19,10 @@ app.use('/try', express.static(path.join(__dirname, 'try')));
 app.post('/setup', (req, res) => {
     var IP = getClientIP(req);
     var stmt = 'allow ' + IP + '\\;';
-    child_proc.execSync('echo ' + stmt + ' >>  ./allowed-ips.conf');
-    var output_buffer = child_proc.execSync('/usr/bin/sudo systemctl reload nginx');
+    var output_buffer = child_proc.execSync('echo ' + stmt + ' >>  ./allowed-ips.conf');
     var msg = 'Thanks for trying Datajoy on this network!';
     msg += '<br>Set your device DNS to 139.162.177.133 (Step 2 of 2)';
-    msg += '<br> And you are done';
-    msg += '<br> Output = ' + Buffer.from(output_buffer).toString();
+    msg += '<br>Your adblocking will start in about a minute.';
     res.send(msg);
 });
 
