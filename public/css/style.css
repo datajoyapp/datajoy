@@ -327,7 +327,11 @@ section.section {
 
 /* --- section heading --- */
 .section-header {
-	text-align: center;
+    text-align: center;
+}
+
+.section-header ul>li{
+    text-align: left;
 }
 .section-header h2.section-heading {
 	text-transform: uppercase;
