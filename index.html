@@ -243,9 +243,13 @@
                         <h3 class="section-heading animated" data-animation="bounceInUp">Trust but Verify</h3>
                         <p>To verify that our DNS servers return the same results as a better known DNS server such as Google's DNS server, run the following code on the command line on a Mac or a Linux machine.</p>
                         <p>For Windows, follow <a href="https://technet.microsoft.com/en-us/library/aa997324(v=exchg.65).aspx">these instructions</a> from Microsoft</p>
+                        <p>First, let us make sure our server recognizes your IP by clicking Try Now button below. Clicking the button does not make any changes on your network, device, or computer</p>
+                        <form class="subscribe_form" action="/setup" method="post" id="try-form2" name="try-form2" novalidate>
+                            <input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit">
+                        </form>
                         <pre><code style="text-align: left">
-                           $host citibank.com 139.162.177.133
-                           # Results in ...
+                           $host citibank.com 139.162.177.133 (# Results in ...)
+
                            Using domain server:
                            Name: 139.162.177.133
                            Address: 139.162.177.133#53
@@ -258,8 +262,8 @@
                         </code></pre>
                         AND
                         <pre><code style="text-align: left">
-                           $host citibank.com 8.8.8.8
-                           # Results in ...
+                           $host citibank.com 8.8.8.8 (# Results in ...)
+
                            Using domain server:
                            Name: 8.8.8.8
                            Address: 8.8.8.8#53
@@ -271,7 +275,7 @@
                            citibank.com mail is handled by 5 mx-b.mail.citi.com.
                         </code></pre>
                         <p>Notice that the results are the same as they should be.</p>
-                        <p>Replace citibank.com with any other URL to verify.</p>
+                        <p>Replace citibank.com with any other URL to verify other results</p>
                     </div>
                 </div>
            </div>
