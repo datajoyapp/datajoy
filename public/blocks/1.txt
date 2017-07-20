@@ -1,6 +1,8 @@
 *.exoclick.com
 syndication.exoclick.com
 exoclick.com
+appflyer.com
+app.appflyer.com
 xeaggq4cqv.com
 m.xeaggq4cqv.com
 ilritj92ic.com
