@@ -437,8 +437,11 @@ adnmore.co.kr
 adnoble.com
 adnow.com
 adnuntius.com
+*.adnxs.com
 adnxs.com
+*.adnxs.net
 adnxs.net
+*.adnxs1.com
 adnxs1.com
 adocean.pl
 adohana.com
