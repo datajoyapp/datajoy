@@ -12,6 +12,8 @@ goandload.com
 lspcpax.com
 *.cliconv.com
 cliconv.com
+*.peak-serving.com
+peak-serving.com
 ###
 007-gateway.com
 04dn8g4f.space
