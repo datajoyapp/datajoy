@@ -1,12 +1,11 @@
 *.exoclick.com
-syndication.exoclick.com
 exoclick.com
+*.appsflyer.com
 appsflyer.com
-app.appsflyer.com
+*.xeaggq4cqv.com
 xeaggq4cqv.com
-m.xeaggq4cqv.com
+*.ilritj92ic.com
 ilritj92ic.com
-m.ilritj92ic.com
 goandload.com
 m.goandload.com
 lspcpax.com
