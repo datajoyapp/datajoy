@@ -27,6 +27,18 @@ app.post('/setup', (req, res) => {
     res.send(msg);
 });
 
+app.post('/setup2', (req, res) => {
+    var IP = getClientIP(req);
+    var stmt = 'allow ' + IP + '\\;';
+    var b1 = child_proc.spawnSync('grep', [IP, './allowed-ips.conf']);
+    var msg = "EXISTS";
+    if(b1.status == 1){
+      var output_buffer = child_proc.execSync('echo ' + stmt + ' >>  ./allowed-ips.conf');
+      msg = "ADDED";
+    }
+    res.send({"result" : msg});
+});
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 
