@@ -412,6 +412,7 @@ h1 a.navbar-brand {
 	color: #fff;
 	font-weight: 900;
 	text-shadow: none;
+    height: 100%;
 }
 
 .navbar-brand {
