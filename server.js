@@ -12,7 +12,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', express.static(__dirname)); 
 
-app.post('/setup', (req, res) => {
+app.post('/setup_old', (req, res) => {
     var IP = getClientIP(req);
     var stmt = 'allow ' + IP + '\\;';
     var b1 = child_proc.spawnSync('grep', [IP, './allowed-ips.conf']);
@@ -27,7 +27,7 @@ app.post('/setup', (req, res) => {
     res.send(msg);
 });
 
-app.post('/setup2', (req, res) => {
+app.post('/setup', (req, res) => {
     var IP = getClientIP(req);
     var stmt = 'allow ' + IP + '\\;';
     var b1 = child_proc.spawnSync('grep', [IP, './allowed-ips.conf']);

@@ -30,9 +30,19 @@
 	 
     <body>
         <script>
-            var setup = function(){
-                m.request({method: "POST", url:"/setup2"}).then( function(data){
+            var setup = function(resultsElem){
+                m.request({method: "POST", url:"/setup"}).then( function(data){
                     console.log(data);
+                    var date = new Date();
+                    var n = date.toDateString();
+                    var time = date.toLocaleTimeString();
+                    if(data.result == 'ADDED'){
+                        $(resultsElem).html( 'This network is now ready for adblocking [' + n + ' ' + time + ']');
+                    } else if(data.result == 'EXISTS'){
+                        $(resultsElem).html( 'This network was previously setup for adblocking [' + n + ' ' + time + ']');
+                    } else {
+                        $(resultsElem).html( 'Your IP could not be setup for blocking. Please contact us via the "Contact" section[' + n + ' ' + time + ']');
+                    }
                 });
             };
         </script>
@@ -255,10 +265,14 @@
                         <p>To verify that our DNS servers return the same results as a better known DNS server such as Google's DNS server, run the following code on the command line on a Mac or a Linux machine.</p>
                         <p>For Windows, follow <a href="https://technet.microsoft.com/en-us/library/aa997324(v=exchg.65).aspx">these instructions</a> from Microsoft</p>
                         <p>First, let us make sure our server recognizes your IP by clicking the Try Now button below. Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>
-                        <form class="subscribe_form" action="/setup" method="post" id="try-form2" name="try-form2" novalidate>
-                            Step 1: Click <input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit">
+                        <!--form class="subscribe_form" action="/setup" method="post" id="try-form2" name="try-form2" novalidate>
+                            Step 1: Click <input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit"-->
                             <!--<div class="g-recaptcha" data-sitekey="6Lf0WykUAAAAAFjAu6uflLzccxb7_2Thg8HWQVbu"></div>-->
-                        </form>
+                        <!--/form-->
+						<button class="btn-cta btn-lg" onclick="setup('#try-now-results-msg1');">Try Now!</button>
+                        <div id='try-now-results1'>
+                            <div id='try-now-results-msg1'>(Results will appear here...)</div>
+                        </div>
                         <pre><code style="text-align: left">
                            $host citibank.com 139.162.177.133 (# Results in ...)
 
@@ -307,16 +321,26 @@
 					<div class="col-md-offset-3 col-md-6">
 						<div class="section-header">
 							<h2 class="section-heading animated" data-animation="bounceInUp">Try for FREE!</h2>
-							<h4>Step 1 - Click the Button Below. Make sure you are on Wifi.</h4>
-							<h4>Step 2 - Follow the instructions in results page</h4>
-							<h4>Step 3 - Contact us if you get stuck</h4>
-							<form class="subscribe_form" action="/setup" method="post" id="try-form" name="try-form" novalidate>
+							<h4>Step 1 - Make sure you are on Wifi, then click Try Now!</h4>
+							<!--<form class="subscribe_form" action="/setup" method="post" id="try-form" name="try-form" novalidate>
 								<input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit">
-                                <p>Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>
+                                <p>Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>-->
                                 <!--<div class="g-recaptcha" data-sitekey="6Lf0WykUAAAAAFjAu6uflLzccxb7_2Thg8HWQVbu"></div>-->
-							</form>
-                            <!--<p>Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>
-							<button class="btn-cta btn-lg" onclick="setup();">Try Now!</button>-->
+							<!--</form>-->
+                            <p>Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>
+							<button class="btn-cta btn-lg" onclick="setup('#try-now-results-msg2');">Try Now!</button>
+                            <div id='try-now-results2'>
+                                <div id='try-now-results-msg2'>(Results will appear here...)</div>
+                                <ul>
+                                    <li>To protect your entire network, make us your first DNS server. Follow these <a href='https://www.lifewire.com/how-to-change-dns-servers-on-most-popular-routers-2617995'>instructions for your router</a>. Be sure to enter 139.162.177.133 as the DNS IP.
+                                    <li>To protect a single device, make us your first DNS server on that device. 
+                                        <br> - <a href='http://www.macinstruct.com/node/558'>Instructions for your iDevices</a>. 
+                                        <br> - <a href='http://xslab.com/2013/08/how-to-change-dns-settings-on-android/'>Instructions for your Android<sup>TM</sup> devices</a>. 
+                                        <br> - <a href='http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/'>Instructions for your Mac</a>. 
+                                        <br> - <a href='http://www.geeksquad.co.uk/articles/how-to-change-your-dns-windows-10'>Instructions for your Windows devices</a>. 
+                                        <br>Be sure to enter 139.162.177.133 as the DNS IP.
+                                </ul>
+                            </div>
 						</div>
 					</div>
 				</div>
