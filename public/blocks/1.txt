@@ -13547,7 +13547,6 @@ hyperlinksecure.com/go/$popup
 i2casting.com
 infinity-info.com/click?$popup,third-party
 iqoption.com/land/$popup,third-party
-itunes.apple.com
 liutilities.com
 lovefilm.com/partners/$popup,third-party
 lovepoker.de
