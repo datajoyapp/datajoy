@@ -1,3 +1,5 @@
+www.links4.pw
+*.links4.pw
 *.cpm20.com
 www.cpm20.com
 cpm20.com
