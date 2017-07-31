@@ -1,3 +1,6 @@
+*.cpm20.com
+www.cpm20.com
+cpm20.com
 hfc195b.com
 lowermybills.adlegend.com
 ads.fuel451.com
