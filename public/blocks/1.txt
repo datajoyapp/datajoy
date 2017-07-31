@@ -1,3 +1,6 @@
+clients.l.google.com
+pagead.l.doubleclick.net
+www-googletagmanager.l.google.com
 googleadapis.l.google.com
 www.links4.pw
 *.links4.pw
@@ -4417,8 +4420,7 @@ goodluckblockingthis.com
 goodtag.it
 googleadservicepixel.com
 googlesyndicatiion.com
-googletagservices.com/tag/js/gpt_$third-party
-googletagservices.com/tag/static/$third-party
+googletagservices.com
 gorgonkil.com
 gortags.com
 gotagy.com
