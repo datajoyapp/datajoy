@@ -346,7 +346,10 @@ section.section {
 	background-image: url(../img/parallax/img1.jpg);
 }
 #parallax2{	
-	background-image: url(../img/parallax/img2.jpg);
+	background-image: url(../img/parallax/img1.jpg);
+}
+#parallax3{	
+	background-image: url(../img/parallax/img1.jpg);
 }
 #testimonials{	
 	background-image: url(../img/parallax/img3.jpg);
