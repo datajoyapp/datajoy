@@ -74,6 +74,10 @@ small {
 	font-weight: 100;
 }
 
+.modal-dialog {
+    background-color: black;
+}
+
 a {
     color: #B10DC9;
 }
