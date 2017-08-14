@@ -74,6 +74,10 @@ small {
 	font-weight: 100;
 }
 
+a {
+    color: #B10DC9;
+}
+
 a:hover {
 	text-decoration: none;
     background-color: white;
