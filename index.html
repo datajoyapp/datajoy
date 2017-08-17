@@ -39,13 +39,18 @@
                     var date = new Date();
                     var n = date.toDateString();
                     var time = date.toLocaleTimeString();
+                    var mesg = '';
                     if(data.result == 'ADDED'){
-                        $(resultsElem).html( 'This network is now ready for adblocking [' + n + ' ' + time + ']');
+                        mesg = 'This network is now ready for adblocking [' + n + ' ' + time + '].';
                     } else if(data.result == 'EXISTS'){
-                        $(resultsElem).html( 'This network was previously setup for adblocking [' + n + ' ' + time + ']');
+                        mesg = 'This network was previously setup for adblocking [' + n + ' ' + time + '].';
                     } else {
-                        $(resultsElem).html( 'Your IP could not be setup for blocking. Please contact us via the "Contact" section[' + n + ' ' + time + ']');
+                        mesg = 'Your IP could not be setup for blocking. Please contact us via the "Contact" section[' + n + ' ' + time + '].';
                     }
+                    mesg = '<p>' + mesg + '</p>';
+                    mesg = mesg + '<p>You can now use Datajoy!</p>';
+                    mesg = mesg + '<button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>';
+                    $(resultsElem).html(mesg);
                 });
             };
         </script>
@@ -280,10 +285,7 @@
                             Step 1: Click <input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit"-->
                             <!--<div class="g-recaptcha" data-sitekey="6Lf0WykUAAAAAFjAu6uflLzccxb7_2Thg8HWQVbu"></div>-->
                         <!--/form-->
-						<button class="btn-cta btn-lg" onclick="setup('#try-now-results-msg1');">Try Now!</button>
-                        <div id='try-now-results1'>
-                            <div id='try-now-results-msg1'>(Results will appear here...)</div>
-                        </div>
+				        <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal">Try Now on a Computer</button>
                         <pre><code style="text-align: left">
                            $host citibank.com 139.162.177.133 (# Results in ...)
 
@@ -349,8 +351,12 @@
                                         <br> - <a href='http://www.geeksquad.co.uk/articles/how-to-change-your-dns-windows-10'>Instructions for your Windows devices</a>.
                                         <br>Be sure to enter 139.162.177.133 as the DNS IP.
                                 </ul>
-							    <button class="btn-cta btn-lg" onclick="setup('#try-now-results-msg2');">Datajoy for Wifi</button>
-                                <div id='try-now-results-msg2'>(Results will appear here...)</div>
+							    <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal">Datajoy for Wifi</button>
+                                <div id="resultsModal" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div id='results-text-div'></div>
+                                    </div>
+                                </div>
                             </div>
                             <div id="myModal" class="modal fade">
                                 <div class="modal-dialog">
@@ -501,8 +507,8 @@
 		</section>-->
 		
 	<section id="footer" class="section footer">
-		<!--<div class="container">
-			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+		<div class="container">
+			<!--<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
 				<div class="col-sm-12 align-center">
                     <ul class="social-network social-circle">
                         <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
