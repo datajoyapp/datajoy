@@ -45,28 +45,6 @@
     </head>
  
     <body>
-        <script>
-            var setup = function(resultsElem){
-                m.request({method: "POST", url:"/setup"}).then( function(data){
-                    console.log(data);
-                    var date = new Date();
-                    var n = date.toDateString();
-                    var time = date.toLocaleTimeString();
-                    var mesg = '';
-                    if(data.result == 'ADDED'){
-                        mesg = 'This network is now ready for adblocking [' + n + ' ' + time + '].';
-                    } else if(data.result == 'EXISTS'){
-                        mesg = 'This network was previously setup for adblocking [' + n + ' ' + time + '].';
-                    } else {
-                        mesg = 'Your IP could not be setup for blocking. Please contact us via the "Contact" section[' + n + ' ' + time + '].';
-                    }
-                    mesg = '<p>' + mesg + '</p>';
-                    mesg = mesg + '<p>You can now use Datajoy!</p>';
-                    mesg = mesg + '<button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>';
-                    $(resultsElem).html(mesg);
-                });
-            };
-        </script>
 		<section id="header" class="appear"></section>
 		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 			 <div class="container">
@@ -78,7 +56,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-					   <li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="index.html">Home</a></li>
                         <li><a href="fupm.html">F-U, Pay Me!</a></li>
                         <li><a href="about.html">About/Contact</a></li>
                         <li><a href="privacy.html">Privacy</a></li>
@@ -87,436 +65,42 @@
 				</div><!--/.navbar-collapse -->
 			</div>
 		</div>
-
-		<section class="featured">
-			<div class="container"> 
-				<div class="row mar-bot40">
-					<div class="col-md-6 col-md-offset-3">
-						
-						<div class="align-center">
-							<i class="fa fa-scissors fa-5x mar-bot20"></i>
-							<h2 class="slogan">Cut your data usage</h2>
-							<p>Block ads, save data. It's that simple. Click <a href="#section-try">Try Now!</a> to start.</p>
-                            <p>DataJoy works on all major US (AT&amp;T<sup>&reg;</sup>, Verizon<sup>&reg;</sup>, T-Mobile<sup>&reg;</sup>) and Indian (Airtel<sup>&reg;</sup>, Reliance Jio<sup>&reg;</sup>) cellular networks. <a href='#' data-toggle="modal" data-target="#legalModal"><sup>Legal</sup></a></p> 
-                            <div id="legalModal" class="modal fade">
-                                <div class="modal-dialog">
-                                    <p>All product names, logos, and brand names are property of their respective owners. Use of these names, logos, and brands does not imply endorsement</p>
-                                    <p>We are not affiliated to, compensated by, or endorsed by DNS Override. All registered trademarks belong to their owners</p>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
-                                </div>
-                            </div>
-                            <p class='sub-p'>Let us know if you would like Datajoy to come to your country next</p>
-							<h3 class="slogan">But that's not all</h3>
-							<p>Datajoy is for the fair minded Internet user. Join our mailing list to learn more about our goal of an ad-free but sustainable Internet.</p>
-							<div class="subcription-info text-center">
-            					<form class="subscribe_form contact-form" action="//datajoy.us8.list-manage.com/subscribe/post?u=019dddf73b578f446f671e038&amp;id=30d61ec5f7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-
-									<input id="mce-EMAIL" required="" value="" placeholder="Want to test Datajoy?" class="email" name="EMAIL" type="email">
-									<input class="subscribe btn-cta btn-lg" name="email" value="Sign up!" type="submit">
-									<div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response" style="display:none"></div>
-									<div class="response" id="mce-success-response" style="display:none"></div>
-									</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-									<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_019dddf73b578f446f671e038_30d61ec5f7" tabindex="-1" value=""></div>
-								</form>
-								<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-								<p class="sub-p"> (No spam. Ever.)</p>
-								</div>
-
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- about -->
-		<section id="section-about" class="section pad-bot30 bg-white">
-		<div class="container"> 
-			<div class="row mar-bot40">
-				<div class="col-md-offset-3 col-md-6">
-					<div class="section-header">
-						<h2 class="section-heading animated" data-animation="bounceInUp">About Us</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row mar-bot40">
-				<div class="col-lg-4" >
-					<div class="align-center">
-						<i class="fa fa-code fa-5x mar-bot20"></i>
-						<h4 class="text-bold">Our Technology</h4>
-						<p>We provide a special purpose DNS server which is regularly updated with a blacklist of adservers. This DNS server sits behind a high performance proxy server to provide great performance.</p>
-					</div>
-				</div>
-					
-				<div class="col-lg-4" >
-					<div class="align-center">
-						<i class="fa fa-terminal fa-5x mar-bot20"></i>
-						<h4 class="text-bold">Our Process</h4>
-						<p>For every website you visit, your computer or phone sends us a type of request called a DNS lookup request. We compare that URL with our masterlist of known ad servers. If we don't find it there, we respond with a thumbs up meaning your computer can go ahead to that URL. Otherwise, we tell your computer to STOP.
-						</p>
-					</div>
-				</div>
-			
-				<div class="col-lg-4" >
-					<div class="align-center">
-						<i class="fa fa-bolt fa-5x mar-bot20"></i>
-						<h4 class="text-bold">Our Special Sauce</h4>
-						<p>We are the first publicly accessible adblocker which can work at the network level. You can block ads not just your personal device but for ALL devices on your Wifi with one minor setting change. No other publicly available adblocker has this capability.
-						</p>
-						<p>We also save you cellular data which lets you surf more. How cool is that?!?</p>
-						</p>
-					</div>
-				</div>
-			
-			</div>	
-
-		</div>
-		</section>
-			
-		<!-- spacer section:testimonial -->
-		<!--<section id="testimonials" class="section" data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row">				
-					<div class="col-lg-12">
-							<div class="align-center">
-        						<div class="testimonial pad-top40 pad-bot40 clearfix">
-        							<h5>
-        								Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-        							</h5>
-        							<br/>
-        							<span class="author">&mdash; MIKE DOE <a href="#">www.siteurl.com</a></span>
-        						</div>
-
-							</div>
-					</div>
-				
-			</div>	
-		</div>	
-		</section-->
-			
-		<!-- about -->
-		<section id="section-team" class="section appear clearfix">
-		<div class="container">
-
-				<div class="row mar-bot40">
-					<div class="col-md-offset-3 col-md-6">
-						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">Our Team</h2>
-							<p>Two guys and a desire to make the web better for everyone</p>
-						</div>
-					</div>
-				</div>
-
-					<div class="row align-center mar-bot40">
-						<div class="col-md-4">
-							<div class="team-member">
-								<figure class="member-photo"><img src="/public/img/team/s_face.png" alt="" /></figure>
-								<div class="team-detail">
-									<h4>Sai Ramachandran</h4>
-									<span>Founder</span>
-										<p>Sai worked on Wall Street for nearly 7 years before he got a real job. He then built apps, architected automation systems, and is now focused on fixing the web with Datajoy.</p>
-										<p>In his spare time, he runs (slowly), cooks (poorly), and fixes things around the house (with much help from DIY videos.)</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="team-member">
-								<figure class="member-photo"><img src="/public/img/team/n_face.png" alt="" /></figure>
-								<div class="team-detail">
-									<h4>Nathan Fu</h4>
-									<span>Advisor</span>
-									<p>After 7 years as a consultant, Nathan took the entrepreneurial plunge in 2016. A Startup Pirates and TIE alumnus, he hopes to leverage his interest in AI, Machine Learning, and hacking to find the next new thing</p>
-                                    <p>He is currently working on a group therapy sessions Platform-as-a-service</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="team-member">
-								<figure class="member-photo"><img src="/public/img/team/u_face.png" alt="" /></figure>
-								<div class="team-detail">
-								<h4>You</h4>
-									<span>User</span>
-								</div>
-							</div>
-						</div>
-						<!--<div class="col-md-3">
-							<div class="team-member">
-								<figure class="member-photo"><img src="img/team/member4.jpg" alt="" /></figure>
-								<div class="team-detail">
-								<h4>Kevin Peterson</h4>
-									<span>UI designer</span>
-								</div>
-							</div>
-						</div>-->
-					</div>
-						
-		</div>
-		</section>
-		<!-- /about -->
 		
 		<!-- spacer section:stats -->
 		<section id="parallax1" class="section pad-top40 pad-bot40" data-stellar-background-ratio="0.5">
 			<div class="container">
             <div class="align-center pad-top40 pad-bot40">
-                <blockquote class="bigquote color-white">Privacy and Logging Policy</blockquote>
-				<p class="color-white">TL;DR - we only have one bit of data about you (which we don't keep for long<sup>*</sup>)</p>
+                <blockquote class="bigquote color-white">Shut Up and Take My Money!</blockquote>
+				<p class="color-white">TL;DR - we <i class="fa fa-heart fa-5x mar-bot20"></i> content</p>
             </div>
 			</div>	
 		</section>
 		
-		<!-- section works -->
+		<!-- privacy -->
 		<section id="section-privacy" class="section appear clearfix">
 			<div class="container">	
 				<div class="row mar-bot40">
 					<div class="col-md-offset-3 col-md-6">
 						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">Privacy Policy</h2>
-							<p>Your trust is critical to us and we understand that earning and keeping your trust is a daily endevor. We commit to discussing any changes to this privacy policy with you, our user community.</p>
-							<ul>
-                              <li>We are committed to full transparency</li>
-                              <li>Apart from your IP address, we don't have any personal information about you</li>
-                              <li>We do not lease or sell any data to anyone</li>
-                              <li>We intend to comply with any lawful request for our logs made by law enforcement</li>
-                              <li>We do log your DNS requests which contains your IP address. These logs are discarded within 2 days of collection. In future, we may wish to store logs to serve our monetization strategy. We commit to only storing fully depersonalized logs</li>
+							<h2 class="section-heading animated" data-animation="bounceInUp">Shut Up and Take My Money!</h2>
+							<p>Earning a living off the internet is hard. We understand that. And us blocking ads doesn't help you..at all. Therefore, we are trialing a way to pay content creators for their work.</p>
+                            <p>Here is what YOU need to do...</p>
+                            <ul>
+                                <li>Step 1</li>
+                                    <ul>
+                                        <li>Create an HTML page with the page name = SHA256(domain name).html. So for datajoy.us, the page name would be f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html</li>
+                                        <li>Use <a href="http://www.xorbin.com/tools/sha256-hash-calculator" target="_blank">this SHA256 calculator</a> to determine the SHA256 hash of your domain name</li>
+                                        <li>If you own a subdomain such abc.blogspot.com, use the SHA256 of your full subdomain. E.g.,  SHA256(abc.blogspot.com) is 589b2cb27949977d6dcac044b537f754660cc94abed89a9046c474c3715806a4 </li>
+                                    </ul>
+                                <li>Step 2: Put an email address you control as the ONLY content of that HTML page</li>
+                                <li>Step 3: Make that HTML page accessible to the public. E.g., <a href="f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html">see our page</a></li>
+                                <li>On the first of every month, based on how many of our users went to your domain, we will PayPal you 1c/visit at that email address</li>
                             </ul>
-                            <p></p>
-                            <p>If you have ANY questions about our privacy and logging policies, please contact us through the channels mentioned in the Contact page.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-            <div class="row mar-bot40">
-                <div class="col-md-offset-3 col-md-6">
-                    <div class="section-header">
-                        <h3 class="section-heading animated" data-animation="bounceInUp">Trust but Verify</h3>
-                        <p>To verify that our DNS servers return the same results as a better known DNS server such as Google's DNS server, run the following code on the command line on a Mac or a Linux machine.</p>
-                        <p>For Windows, follow <a href="https://technet.microsoft.com/en-us/library/aa997324(v=exchg.65).aspx">these instructions</a> from Microsoft</p>
-                        <p>First, let us make sure our server recognizes your IP by clicking the Try Now button below. Clicking the button does not make any changes on your network, device, or computer. We clear the list of recognized IPs at 12:01 AM Eastern on the 1<sup>st</sup> of every month.</p>
-                        <!--form class="subscribe_form" action="/setup" method="post" id="try-form2" name="try-form2" novalidate>
-                            Step 1: Click <input class="btn-cta btn-lg" name="try-now" value="Try Now!" type="submit"-->
-                            <!--<div class="g-recaptcha" data-sitekey="6Lf0WykUAAAAAFjAu6uflLzccxb7_2Thg8HWQVbu"></div>-->
-                        <!--/form-->
-				        <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal">Try Now on a Computer</button>
-                        <pre><code style="text-align: left">
-                           $host citibank.com 139.162.177.133 (# Results in ...)
-
-                           Using domain server:
-                           Name: 139.162.177.133
-                           Address: 139.162.177.133#53
-                           Aliases:
-
-                           citibank.com has address 192.193.102.175
-                           citibank.com has address 192.193.218.130
-                           citibank.com mail is handled by 5 mx-a.mail.citi.com.
-                           citibank.com mail is handled by 5 mx-b.mail.citi.com.
-                        </code></pre>
-                        AND
-                        <pre><code style="text-align: left">
-                           $host citibank.com 8.8.8.8 (# Results in ...)
-
-                           Using domain server:
-                           Name: 8.8.8.8
-                           Address: 8.8.8.8#53
-                           Aliases:
-
-                           citibank.com has address 192.193.102.175
-                           citibank.com has address 192.193.218.130
-                           citibank.com mail is handled by 5 mx-a.mail.citi.com.
-                           citibank.com mail is handled by 5 mx-b.mail.citi.com.
-                        </code></pre>
-                        <p>Notice that the results are the same as they should be.</p>
-                        <p>Replace citibank.com with any other URL to verify other results</p>
-                    </div>
-                </div>
-           </div>
-		</section>
-
-		<section id="parallax2" class="section parallax" data-stellar-background-ratio="0.5">	
-            <div class="align-center pad-top40 pad-bot40">
-                <blockquote class="bigquote color-white">Try Now!</blockquote>
-				<p class="color-white">TL;DR - Block ads in less than 5 minutes</p>
-            </div>
-		</section>
-
-		<!-- contact -->
-		<section id="section-try" class="section appear clearfix">
-			<div class="container">
-				
-				<div class="row mar-bot40">
-					<div class="col-md-offset-3 col-md-6">
-						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">block ads on cellular!</h2>
-							<ul>
-                                <li>Install <a href='https://www.dnsoverride.com'>DNS Override<sup>&trade;&reg;</sup></a> for your iDevice. For Android<sup>&trade;</sup>, use <a href='https://play.google.com/store/apps/details?id=com.frostnerd.dnschanger&hl=en'>DNS Changer</a>.<a href='#' data-toggle="modal" data-target="#legalModal"><sup>Legal</sup></a>
-                                <li>Make an in-app purchase which allows you to use our DNS server (139.162.177.133). <a href='#' data-toggle="modal" data-target="#legalModal"><sup>Legal</sup></a>
-                                <li>Follow the <a href='#' data-toggle="modal" data-target="#myModal">slideshow</a> to start using our DNS server
-                            </ul>
-							<h2 class="section-heading animated" data-animation="bounceInUp">block ads on Wifi</h2>
-                            <div id='try-now-results2'>
-                                <ul>
-                                    <li>To protect your entire network, make us your first DNS server. Follow these <a href='https://www.lifewire.com/how-to-change-dns-servers-on-most-popular-routers-2617995'>instructions for your router</a>. Be sure to enter 139.162.177.133 as the DNS IP.
-                                    <li>To protect a single device, make us your first DNS server on that device.
-                                        <br> - <a href='http://www.macinstruct.com/node/558'>Instructions for your iDevices</a>.
-                                        <br> - <a href='http://xslab.com/2013/08/how-to-change-dns-settings-on-android/'>Instructions for your Android<sup>TM</sup> devices</a>.
-                                        <br> - <a href='http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/'>Instructions for your Mac</a>.
-                                        <br> - <a href='http://www.geeksquad.co.uk/articles/how-to-change-your-dns-windows-10'>Instructions for your Windows devices</a>.
-                                        <br>Be sure to enter 139.162.177.133 as the DNS IP.
-                                </ul>
-							    <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal">Datajoy for Wifi</button>
-                                <div id="resultsModal" class="modal fade">
-                                    <div class="modal-dialog">
-                                        <div id='results-text-div'></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="myModal" class="modal fade">
-                                <div class="modal-dialog">
-                                     <div class="device-container">
-                                        <div class="device-mockup iphone6_plus portrait white">
-                                            <div class="device">
-                                                <div class="screen">
-                                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                                    <!--<img src="img/demo-screen-1.jpg" class="img-responsive" alt="">-->
-                                                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval='false'>
-                                                      <!-- Indicators -->
-                                                      <ol class="carousel-indicators">
-                                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                                                      </ol>
-                                                      <!-- Wrapper for slides -->
-                                                      <div class="carousel-inner">
-                                                        <div class="item active">
-                                                          <img src="public/img/slideshow/1.JPG" alt="Los Angeles">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/2.JPG" alt="Chicago">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/3.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/4.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/5.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/6.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/7.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/8.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/9.JPG" alt="New York">
-                                                        </div>
-
-                                                        <div class="item">
-                                                          <img src="public/img/slideshow/10.JPG" alt="New York">
-                                                        </div>
-                                                      </div>
-
-                                                      <!-- Left and right controls -->
-                                                      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                                        <span class="sr-only">Previous</span>
-                                                      </a>
-                                                      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                                        <span class="sr-only">Next</span>
-                                                      </a>
-                                                    </div>
-                                                </div>
-                                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                <div class="button">
-                                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<section id="parallax3" class="section parallax" data-stellar-background-ratio="0.5">	
-            <div class="align-center pad-top40 pad-bot40">
-                <blockquote class="bigquote color-white">Contact Us</blockquote>
-				<p class="color-white">TL;DR - Email or our subreddit is the fastest way to reach us</p>
-            </div>
-		</section>
-
-		<!-- contact -->
-		<section id="section-contact" class="section appear clearfix">
-			<div class="container">
-				
-				<div class="row mar-bot40">
-					<div class="col-md-offset-3 col-md-6">
-						<div class="section-header">
-							<h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
-							<h4>Email: datajoyapp AT Gmail </h4>
-							<h4>Reddit: <a href="https://reddit.com/r/datajoy">https://reddit.com/r/datajoy</a></h4>
-						</div>
-					</div>
-				</div>
-				<!--<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<div class="cform" id="contact-form">
-							<div id="sendmessage">
-								 Your message has been sent. Thank you!
-							</div>
-                            <div id="errormessage"></div>
-							<form action="" method="post" role="form" class="contactForm">
-							  <div class="form-group">
-								<label for="name">Your Name</label>
-								<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="email">Your Email</label>
-								<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="subject">Subject</label>
-								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-								<div class="validation"></div>
-							  </div>
-							  <div class="form-group">
-								<label for="message">Message</label>
-								<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
-								<div class="validation"></div>
-							  </div>
-							  
-							  <button type="submit" class="btn btn-theme pull-left">SEND MESSAGE</button>
-							</form>
-
-						</div>
-					</div>-->
-					<!-- ./span12 -->
-				<!--</div>-->
-				
-			</div>
-		</section>
-		<!-- map -->
-		<!--<section id="section-map" class="clearfix">
-            <div id="google-map" data-latitude="40.713732" data-longitude="-74.0092704"></div>
-		</section>-->
 		
 	<section id="footer" class="section footer">
 		<div class="container">
