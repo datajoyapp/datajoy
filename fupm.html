@@ -85,13 +85,24 @@
 							<h2 class="section-heading animated" data-animation="bounceInUp">Shut Up and Take My Money!</h2>
 							<p>Earning a living off the internet is hard. We understand that. And us blocking ads doesn't help you..at all. Therefore, we are trialing a way to pay content creators for their work.</p>
                             <p>Here is what YOU need to do...</p>
-                            <ul>
+                            <ul class="text-left">
                                 <li>Step 1</li>
-                                    <ul>
-                                        <li>Create an HTML page with the page name = SHA256(domain name).html. So for datajoy.us, the page name would be f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html</li>
-                                        <li>Use <a href="http://www.xorbin.com/tools/sha256-hash-calculator" target="_blank">this SHA256 calculator</a> to determine the SHA256 hash of your domain name</li>
-                                        <li>If you own a subdomain such abc.blogspot.com, use the SHA256 of your full subdomain. E.g.,  SHA256(abc.blogspot.com) is 589b2cb27949977d6dcac044b537f754660cc94abed89a9046c474c3715806a4 </li>
-                                    </ul>
+                                    <ol>
+                                        <li>Go to <a href="http://www.xorbin.com/tools/sha256-hash-calculator" target="_blank">this SHA256 calculator</a></li>
+                                        <li>Enter your domain name (lower case only) in the data field. If you own a subdomain like abc.blogspot.com, enter that instead</li>
+                                        <li>Click the "Calculate SHA256 Hash" button
+                                            <ul>
+                                                <li>E.g., for datajoy.us, the SHA256 Hash is f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509</li>
+                                                <li>E.g., for abc.blogspot.com, the SHA256 Hash is 589b2cb27949977d6dcac044b537f754660cc94abed89a9046c474c3715806a4</li>
+                                            </ul>
+                                        </li>
+                                        <li>Create an HTML page whose name matches the results of Step #1.3
+                                            <ul>
+                                                <li>E.g., for Datajoy.us, the HTML page name is f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html</li>
+                                                <li>E.g., for abc.blogspot.com, the HTML page name will be 589b2cb27949977d6dcac044b537f754660cc94abed89a9046c474c3715806a4.html</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
                                 <li>Step 2: Put an email address you control as the ONLY content of that HTML page</li>
                                 <li>Step 3: Make that HTML page accessible to the public. E.g., <a href="f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html">see our page</a></li>
                                 <li>On the first of every month, based on how many of our users went to your domain, we will PayPal you 1c/visit at that email address</li>
