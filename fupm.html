@@ -56,10 +56,10 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-                        <li><a href="fupm.html">F-U, Pay Me!</a></li>
-                        <li><a href="about.html">About/Contact</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
-                        <li><a href="try.html">Try Now!</a></li>
+                        <li><a href="fupm.html" onclick="ga('send', 'event', 'fupm_btn', 'click', 'fupm.fupm_btn');">F-U, Pay Me!</a></li>
+                        <li><a href="about.html" onclick="ga('send', 'event', 'abt_btn', 'click', 'fupm.abt_btn');">About/Contact</a></li>
+                        <li><a href="privacy.html" onclick="ga('send', 'event', 'priv_btn', 'click', 'fupm.priv_btn');">Privacy</a></li>
+                        <li><a href="try.html" onclick="ga('send', 'event', 'try_btn', 'click', 'fupm.try_btn');">Try Now!</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
@@ -87,7 +87,7 @@
                             <ul class="text-left">
                                 <li>Step 1</li>
                                     <ol>
-                                        <li>Go to <a href="http://www.xorbin.com/tools/sha256-hash-calculator" target="_blank">this SHA256 calculator</a></li>
+                                        <li>Go to <a href="http://www.xorbin.com/tools/sha256-hash-calculator" target="_blank" onclick="ga('send', 'event', 'sha256_btn', 'click', 'fupm.sha256_btn');">this SHA256 calculator</a></li>
                                         <li>Enter your domain name (lower case only) in the data field. If you own a subdomain like abc.blogspot.com, enter that instead</li>
                                         <li>Click the "Calculate SHA256 Hash" button
                                             <ul>
@@ -103,7 +103,7 @@
                                         </li>
                                     </ol>
                                 <li>Step 2: Put an email address you control as the ONLY content of that HTML page</li>
-                                <li>Step 3: Make that HTML page accessible to the public. E.g., <a href="f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html">see our page</a></li>
+                                <li>Step 3: Make that HTML page accessible to the public. E.g., <a href="f41372769d856f3516fc6a09f779c5a4112d1ea5c7022f26a898e3a28f814509.html" onclick="ga('send', 'event', 'example_pg_btn', 'click', 'fupm.example_pg_btn');">see our page</a></li>
                                 <li>On the first of every month, based on how many of our users went to your domain, we will PayPal you 1c/visit at that email address</li>
                             </ul>
 						</div>

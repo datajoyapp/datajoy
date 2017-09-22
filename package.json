@@ -8,6 +8,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "^1.18.1",
+    "express": "^4.13.3",
+    "os": "^0.1.1",
+    "sqlite3": "^3.11.1"
   }
 }

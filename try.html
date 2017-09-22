@@ -78,10 +78,10 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-                        <li><a href="fupm.html">F-U, Pay Me!</a></li>
-                        <li><a href="about.html">About/Contact</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
-                        <li><a href="try.html">Try Now!</a></li>
+                        <li><a href="fupm.html" onclick="ga('send', 'event', 'fupm_btn', 'click', 'try.fupm_btn');">F-U, Pay Me!</a></li>
+                        <li><a href="about.html" onclick="ga('send', 'event', 'abt_btn', 'click', 'try.abt_btn');">About/Contact</a></li>
+                        <li><a href="privacy.html" onclick="ga('send', 'event', 'priv_btn', 'click', 'try.priv_btn');">Privacy</a></li>
+                        <li><a href="try.html" onclick="ga('send', 'event', 'try_btn', 'click', 'try.try_btn');">Try Now!</a></li>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
@@ -104,9 +104,9 @@
 						<div class="section-header">
 							<h2 class="section-heading animated" data-animation="bounceInUp">block ads on cellular!</h2>
 							<ul>
-                                <li>Install <a href='https://www.dnsoverride.com'>DNS Override<sup>&trade;&reg;</sup></a> for your iDevice. For Android<sup>&trade;</sup>, use <a href='https://play.google.com/store/apps/details?id=com.frostnerd.dnschanger&hl=en'>DNS Changer</a>.<a href='#' data-toggle="modal" data-target="#legalModal"><sup>Legal</sup></a>
-                                <li>Make an in-app purchase which allows you to use our DNS server (139.162.177.133). <a href='#' data-toggle="modal" data-target="#legalModal"><sup>Legal</sup></a>
-                                <li>Follow the <a href='#' data-toggle="modal" data-target="#myModal">slideshow</a> to start using our DNS server
+                                <li>Install <a href='https://www.dnsoverride.com' onclick="ga('send', 'event', 'dns_override_btn', 'click', 'try.dns_override_btn');">DNS Override<sup>&trade;&reg;</sup></a> for your iDevice. For Android<sup>&trade;</sup>, use <a href='https://play.google.com/store/apps/details?id=com.frostnerd.dnschanger&hl=en' onclick="ga('send', 'event', 'dns_changer_btn', 'click', 'try.dns_changer_btn');">DNS Changer</a>.<a href='#' data-toggle="modal" data-target="#legalModal" onclick="ga('send', 'event', 'legal_btn', 'click', 'index.try_btn_1');"><sup>Legal</sup></a>
+                                <li>Make an in-app purchase which allows you to use our DNS server (139.162.177.133). <a href='#' data-toggle="modal" data-target="#legalModal" onclick="ga('send', 'event', 'legal_btn', 'click', 'try.legal_btn_2');"><sup>Legal</sup></a>
+                                <li>Follow the <a href='#' data-toggle="modal" data-target="#myModal" onclick="ga('send', 'event', 'slideshow_btn', 'click', 'try.slideshow_btn');">slideshow</a> to start using our DNS server
                             </ul>
 							<h2 class="section-heading animated" data-animation="bounceInUp">block ads on Wifi</h2>
                             <div id='try-now-results2'>
@@ -119,7 +119,7 @@
                                         <br> - <a href='http://www.geeksquad.co.uk/articles/how-to-change-your-dns-windows-10'>Instructions for your Windows devices</a>.
                                         <br>Be sure to enter 139.162.177.133 as the DNS IP.
                                 </ul>
-							    <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal">Datajoy for Wifi</button>
+							    <button class="btn-cta btn-lg" onclick="setup('#results-text-div');" data-toggle="modal" data-target="#resultsModal" onclick="ga('send', 'event', 'dj_wifi_btn', 'click', 'try.dj_wifi_btn');">Datajoy for Wifi</button>
                             </div>
                             <div id="myModal" class="modal fade">
                                 <div class="modal-dialog">
