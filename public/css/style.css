@@ -83,8 +83,8 @@ a {
 }
 
 a:hover {
-	text-decoration: none;
-    background-color: white;
+    color: #B10DC9;
+	text-decoration: underline;
 }
 
 :focus {
